@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Pamela",
-  description: "Portfolio of Pamela, a marketing professional",
+  title: "Pam Pinheiro | Publicidade Digita",
+  description:
+    "Descubra os serviços da Pam Pinheiro: conteúdo digital, mídias sociais e campanhas estratégicas.",
 };
 
 export default function RootLayout({
