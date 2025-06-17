@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Pam Pinheiro | Publicidade Digita",
   description:
     "Descubra os serviços da Pam Pinheiro: conteúdo digital, mídias sociais e campanhas estratégicas.",
+  icons: {
+    icon: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({
