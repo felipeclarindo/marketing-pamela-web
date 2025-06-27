@@ -9,10 +9,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const partnersImages = [
-  "/images/partners/empresa1.png",
+  "/images/partners/empresa1.PNG",
   "/images/partners/empresa2.png",
-  "/images/partners/empresa3.png",
-  "/images/partners/empresa4.png",
+  "/images/partners/empresa3.PNG",
+  "/images/partners/empresa4.PNG",
 ];
 
 export default function PartnerSlider() {
@@ -38,7 +38,6 @@ export default function PartnerSlider() {
           nextEl: nextRef.current,
         }}
         onInit={(swiper) => {
-          // Garanta que os botões existam ao conectar
           if (
             typeof swiper.params.navigation !== "boolean" &&
             swiper.params.navigation
@@ -79,7 +78,7 @@ export default function PartnerSlider() {
         ref={prevRef}
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.95 }}
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-[#C39C68] p-2 rounded-full hover:bg-[#a48452] transition-all duration-300 ease-in-out"
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-[#C39C68] p-2 rounded-full hover:bg-[#a48452] transition-all duration-300 ease-in-out cursor-pointer"
         aria-label="Anterior"
       >
         <svg width="20" height="20" fill="black" viewBox="0 0 24 24">
@@ -91,7 +90,7 @@ export default function PartnerSlider() {
         ref={nextRef}
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.95 }}
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-[#C39C68] p-2 rounded-full hover:bg-[#a48452] transition-all duration-300 ease-in-out"
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-[#C39C68] p-2 rounded-full hover:bg-[#a48452] transition-all duration-300 ease-in-out cursor-pointer"
         aria-label="Próximo"
       >
         <svg width="20" height="20" fill="black" viewBox="0 0 24 24">

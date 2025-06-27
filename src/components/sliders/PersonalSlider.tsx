@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -38,7 +38,6 @@ export default function PersonalSlider() {
           nextEl: nextRef.current,
         }}
         onInit={(swiper) => {
-          // Garanta que os botões existam ao conectar
           if (
             typeof swiper.params.navigation !== "boolean" &&
             swiper.params.navigation
@@ -79,7 +78,7 @@ export default function PersonalSlider() {
         ref={prevRef}
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.95 }}
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-[#C39C68] p-2 rounded-full hover:bg-[#a48452] transition-all duration-300 ease-in-out"
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-[#C39C68] p-2 rounded-full hover:bg-[#a48452] transition-all duration-300 ease-in-out cursor-pointer"
         aria-label="Anterior"
       >
         <svg width="20" height="20" fill="black" viewBox="0 0 24 24">
@@ -91,7 +90,7 @@ export default function PersonalSlider() {
         ref={nextRef}
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.95 }}
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-[#C39C68] p-2 rounded-full hover:bg-[#a48452] transition-all duration-300 ease-in-out"
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-[#C39C68] p-2 rounded-full hover:bg-[#a48452] transition-all duration-300 ease-in-out cursor-pointer"
         aria-label="Próximo"
       >
         <svg width="20" height="20" fill="black" viewBox="0 0 24 24">
