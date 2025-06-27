@@ -22,7 +22,7 @@ export default function ServiceSection() {
       <p className="text-[#F9F6F1] mt-2 mb-10">
         Tudo o que você precisa para alavancar sua presença online.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 md:max-w-6xl mx-auto sm:max-w-[350px]">
         {services.map((s, i) => (
           <div
             key={i}
