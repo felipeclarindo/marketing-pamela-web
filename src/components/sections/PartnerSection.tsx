@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import PartnerSliderWrapper from "../ui/PartnerSliderWrapper";
+import PartnerSliderWrapper from "../sliders/PartnerSliderWrapper";
 
 export default function PartnerSection() {
   return (
