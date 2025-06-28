@@ -3,7 +3,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Pam Pinheiro | Publicidade Digita",
+  title: "Pam Pinheiro | Publicidade Digital",
   description:
     "Descubra os serviços da Pam Pinheiro: conteúdo digital, mídias sociais e campanhas estratégicas.",
   icons: {
