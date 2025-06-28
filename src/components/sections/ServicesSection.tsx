@@ -17,7 +17,10 @@ export default function ServiceSection() {
   ];
 
   return (
-    <section id="services" className="min-h-screen py-20 text-center px-6">
+    <section
+      id="services"
+      className="min-h-screen py-20 text-center px-6 flex flex-col justify-center"
+    >
       <h2 className="text-3xl font-bold text-[#C39C68]">Serviços</h2>
       <p className="text-[#F9F6F1] mt-2 mb-10">
         Tudo o que você precisa para alavancar sua presença online.

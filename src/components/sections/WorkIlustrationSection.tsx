@@ -1,16 +1,16 @@
+import MovieSliderWrapper from "../sliders/MovieSliderWrapper";
+
 export default function WorkIlustrationSection() {
   return (
-    <section className="min-h-screen py-20 text-center px-6 bg-gradient-to-b from-[#0A0A0A] to-[#1A1A1A]">
-      <h2 className="text-4xl font-bold text-[#C39C68] mb-12">
-        Ilustrações de Trabalho
+    <section className="min-h-screen py-20 text-center px-6 relative flex flex-col justify-center items-center">
+      <h2 className="text-3xl font-bold text-[#C39C68] mb-12">
+        Trabalhos Recentes
       </h2>
-      <div className="max-w-4xl mx-auto">
-        <img
-          src="/images/work-illustration.png"
-          alt="Ilustração de trabalho"
-          className="w-full h-auto"
-        />
-      </div>
+      <p className="text-lg text-gray-300 mb-8">
+        Confira alguns trabalhos cujo criei recentemente para alguns dos meus
+        clientes.
+      </p>
+      <MovieSliderWrapper />
     </section>
   );
 }

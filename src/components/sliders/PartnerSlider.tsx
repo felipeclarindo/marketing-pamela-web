@@ -76,24 +76,20 @@ export default function PartnerSlider() {
       {/* Navigation buttons */}
       <motion.button
         ref={prevRef}
-        whileHover={{ scale: 1.15 }}
-        whileTap={{ scale: 0.95 }}
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-[#C39C68] p-2 rounded-full hover:bg-[#a48452] transition-all duration-300 ease-in-out cursor-pointer"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-[#C39C68] text-black p-3 rounded-full shadow-md hover:opacity-65 transition-all duration-300 cursor-pointer ease-in-out"
         aria-label="Anterior"
       >
-        <svg width="20" height="20" fill="black" viewBox="0 0 24 24">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
           <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
         </svg>
       </motion.button>
 
       <motion.button
         ref={nextRef}
-        whileHover={{ scale: 1.15 }}
-        whileTap={{ scale: 0.95 }}
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-[#C39C68] p-2 rounded-full hover:bg-[#a48452] transition-all duration-300 ease-in-out cursor-pointer"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-[#C39C68] text-black p-3 rounded-full shadow-md hover:opacity-65 transition-all duration-300 cursor-pointer ease-in-out"
         aria-label="Próximo"
       >
-        <svg width="20" height="20" fill="black" viewBox="0 0 24 24">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
           <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
         </svg>
       </motion.button>
