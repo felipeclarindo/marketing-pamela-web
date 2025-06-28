@@ -6,6 +6,8 @@ import AnimatedBackground from "@/components/ui/AnimatedBackground";
 import IntroductionSection from "@/components/sections/IntroductionSection";
 import PartnerSection from "@/components/sections/PartnerSection";
 import MetricsSection from "@/components/sections/MetricsSection";
+import WorkIlustrationSection from "@/components/sections/WorkIlustrationSection";
+import AboutMeSection from "@/components/sections/AboutMeSection";
 
 export default function Home() {
   return (
@@ -15,6 +17,7 @@ export default function Home() {
       {/* Sections */}
       <IntroductionSection />
       <MetricsSection />
+      <AboutMeSection />
       <ServiceSection />
       <PartnerSection />
       <ContactSection />

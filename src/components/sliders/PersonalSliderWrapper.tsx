@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import PersonalSlider from "./PersonalSlider";
 
-export default function PartnerSliderWrapper() {
+export default function PersonalSliderWrapper() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {

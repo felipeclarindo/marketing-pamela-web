@@ -3,7 +3,7 @@ import PartnerSliderWrapper from "../sliders/PartnerSliderWrapper";
 
 export default function PartnerSection() {
   return (
-    <section className="min-h-screen py-20 text-center px-6 bg-gradient-to-b">
+    <section className="min-h-screen py-20 text-center px-6">
       <motion.h2
         className="text-4xl font-bold text-[#C39C68] mb-12"
         initial={{ opacity: 0, y: -20 }}
