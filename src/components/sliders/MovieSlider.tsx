@@ -1,33 +1,55 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 
 const partnerVideos = [
-  "/movies/Aniversario.mp4",
-  "/movies/Banda.mp4",
-  "/movies/CaptacaoNaPraia.mp4",
-  "/movies/CavalosAdastrados.mp4",
-  "/movies/CrecheDois.mp4",
-  "/movies/Creche.mp4",
-  "/movies/Dentista.mp4",
-  "/movies/EventoJunina.mp4",
-  "/movies/ExposicaoDeGadoDois.mp4",
-  "/movies/ExposicaoDeGadoTres.mp4",
-  "/movies/ExposicaoDeGado.mp4",
-  "/movies/InauguraçãoEstacio.mp4",
-  "/movies/SaoJoaoDeFortaleza.mp4",
-  "/movies/VideoInstitucionalDentista.mov",
+  "/images/movies/Aniversario.mp4",
+  "/images/movies/Banda.mp4",
+  "/images/movies/CaptacaoNaPraia.mp4",
+  "/images/movies/CavalosAdastrados.mp4",
+  "/images/movies/CrecheDois.mp4",
+  "/images/movies/Creche.mp4",
+  "/images/movies/Dentista.mp4",
+  "/images/movies/EventoJunina.mp4",
+  "/images/movies/ExposicaoDeGadoDois.mp4",
+  "/images/movies/ExposicaoDeGadoTres.mp4",
+  "/images/movies/ExposicaoDeGado.mp4",
+  "/images/movies/InauguracaoEstacio.mp4",
 ];
 
 export default function MovieSlider() {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
-  const [swiperReady, setSwiperReady] = useState(false);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const [swiperInstance, setSwiperInstance] = useState<any>(null);
+
+  useEffect(() => {
+    if (swiperInstance && prevRef.current && nextRef.current) {
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
+
+  const handleSlideChange = (swiper: any) => {
+    videoRefs.current.forEach((video, idx) => {
+      if (!video) return;
+      if (idx === swiper.realIndex) {
+        video
+          .play()
+          .catch((err) => console.warn("Erro ao reproduzir o vídeo:", err));
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  };
 
   return (
     <motion.section
@@ -40,24 +62,15 @@ export default function MovieSlider() {
         modules={[Autoplay, Navigation]}
         slidesPerView={1}
         spaceBetween={30}
-        loop={true}
+        loop
         autoplay={{ delay: 5000, disableOnInteraction: false }}
-        navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
+        onSwiper={(swiper) => {
+          setSwiperInstance(swiper);
+          setTimeout(() => {
+            handleSlideChange(swiper);
+          }, 100);
         }}
-        onInit={(swiper) => {
-          if (
-            typeof swiper.params.navigation !== "boolean" &&
-            swiper.params.navigation
-          ) {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }
-          setSwiperReady(true);
-        }}
+        onSlideChange={handleSlideChange}
         className="z-0"
       >
         {partnerVideos.map((src, i) => (
@@ -69,13 +82,15 @@ export default function MovieSlider() {
             >
               <div className="p-4 rounded-xl bg-black/10 backdrop-blur-sm shadow-lg hover:shadow-[#C39C68]/50 transition-shadow duration-300 w-fit mx-auto my-5">
                 <video
+                  ref={(el) => {
+                    videoRefs.current[i] = el;
+                  }}
                   src={src}
                   controls
-                  autoPlay
-                  muted
-                  loop
                   playsInline
-                  className="w-full max-w-[720px] max-h-[400px] rounded-lg object-cover shadow-md"
+                  muted
+                  preload="auto"
+                  className="w-full max-w-[350px] min-h-[349px] rounded-lg object-cover shadow-md"
                 />
               </div>
             </motion.div>
@@ -83,7 +98,7 @@ export default function MovieSlider() {
         ))}
       </Swiper>
 
-      {/* Navigation buttons */}
+      {/* Botões de navegação */}
       <motion.button
         ref={prevRef}
         whileHover={{ scale: 1.15 }}

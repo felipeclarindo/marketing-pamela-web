@@ -19,6 +19,7 @@ export default function Home() {
       <MetricsSection />
       <AboutMeSection />
       <ServiceSection />
+      <WorkIlustrationSection />
       <PartnerSection />
       <ContactSection />
     </main>

@@ -3,7 +3,7 @@ import PersonalSliderWrapper from "../sliders/PersonalSliderWrapper";
 export default function AboutMeSection() {
   return (
     <section className="min-h-screen py-20 px-6 flex flex-col justify-center items-center text-center relative overflow-hidden">
-      <h2 className="text-3xl md:text-5xl font-bold text-[#C9A969] mb-6 z-10">
+      <h2 className="text-2xl md:text-3xl font-bold text-[#C9A969] mb-6 z-10">
         Sobre Mim
       </h2>
       <div className="max-w-4xl text-[#F9F6F1] leading-relaxed 12 z-10 flex flex-col items-left gap-2">
