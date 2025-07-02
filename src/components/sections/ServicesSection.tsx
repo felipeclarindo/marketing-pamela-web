@@ -36,10 +36,10 @@ export default function ServiceSection() {
           </div>
         ))}
       </div>
-      <Button
+      {/* <Button
         text="Solicitar Serviço"
         className="max-w-[200px] text-center flex items-center justify-center mx-auto mt-12"
-      />
+      /> */}
     </section>
   );
 }

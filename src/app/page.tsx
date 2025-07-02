@@ -18,10 +18,10 @@ export default function Home() {
       <IntroductionSection />
       <MetricsSection />
       <AboutMeSection />
-      <ServiceSection />
       <WorkIlustrationSection />
+      <ServiceSection />
       <PartnerSection />
       <ContactSection />
     </main>
   );
-}
+} 
