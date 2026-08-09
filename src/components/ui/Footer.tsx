@@ -10,12 +10,12 @@ export default function Footer() {
       <p className="text-sm text-gray-400 mt-2 flex justify-center items-center gap-2">
         Desenvolvido por
         <Link
-          href="https://www.linkedin.com/in/felipeclarindo"
+          href="https://instagram.com/fcsolucoesdigitais"
           target="_blank"
           rel="noopener noreferrer"
           className="cursor-pointer z-10 flex items-center gap-1 text-[#C39C68] hover:text-[#d7b07f] transition-all duration-300 ease-in-out hover:opacity-60"
         >
-          Felipe Clarindo
+          FC Soluções Digitais
         </Link>
       </p>
     </footer>
